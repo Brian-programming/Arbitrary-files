@@ -1,0 +1,16 @@
+from math import *
+int1 = input("Sum: Enter a number: ")
+int2 = input("Sum: Enter another number: ")
+print(float(int1) + float(int2))
+int3 = input("Sub: Enter a number: ")
+int4 = input("Sub: Enter another number: ")
+subtract = float(int3) + float(int4) * -1
+print(str(subtract))
+int5 = input("Product: Enter a number: ")
+int6 = input("Product: Enter another number: ")
+print(float(int5)*float(int6))
+int7 = input("Quotient: Enter a number: ")
+int8 = input("Quotient: Enter another number: ")
+division = float(int7) // float(int8)
+print(str(division))
+print("Warning: These can not show decimals that are extremely low. I really should have mentioned this at the beginning")
