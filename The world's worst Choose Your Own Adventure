@@ -1,0 +1,40 @@
+def Brokegame():
+    print("The game's broken. Go home")
+print("You wake up on a patio. What do you do? \n A: Leave the patio \n B: Get up \n C: Nothing \n D: Wake up")
+interaction1 = input("Enter an option: ")
+if interaction1 == "A":
+    print("You got up. What do you do?\n A: Leave the patio \n B: Get up \n C: Nothing \n D: Wake up")
+    interaction2 = input("Enter an option: ")
+    if interaction2 == "A":
+        print("You got up. What do you do?\n A: Leave the patio \n B: Get up \n C: Nothing \n D: Wake up")
+        interaction3 = input("Enter an option: ")
+        if interaction3 == "A":
+            print("You got up. What do you do?\n A: Leave the patio \n B: Get up \n C: Nothing \n D: Wake up")
+            interaction4 = input("Enter an option: ")
+            if interaction4 == "A":
+                print("Oh wow, you're still here. You've been typing A for a while")
+                interaction5 = input("Enter an option: ")
+                if interaction5 == "A":
+                   print("Ok then. AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+                if interaction5 == "B":
+                    print("Well, the story's already destroyed. Oh well, there's nothing left to do. You win! What now?")
+        if interaction3 == "B":
+            print("Okay, this story doesn't even make sense anymore")
+        if interaction3 == "C":
+            print("And there goes the canon")
+        if interaction3 == "D":
+            print("I'm not writing more of this!")
+    if interaction2 == "B":
+        print("You got up. Unfortunantly, you're already up. Time will not collapse")
+    if interaction2 == "C":
+        print("WHY?")
+    if interaction2 == "D":
+        print("You wake up on a patio. What do you- Did you just reset the story?")
+if interaction1 == "C":
+    print("You stopped breathing and suffocated. Game over. ")
+if interaction1 == "B":
+    print("You got up. This action took too long, and the game timed out. Oh well. ")
+if interaction1 == "D":
+    print("You wake up on a- Oh come on! I am not doing this again!")
+if interaction1 == "E":
+    Brokegame()
