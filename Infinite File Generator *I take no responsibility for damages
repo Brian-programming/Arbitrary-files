@@ -1,7 +1,11 @@
-#This will take hours to wipe if you don't know what you're doing. DO NOT RUN WITHOUT SUPERVISION!
-some = 5
+#This will take hours to wipe if you don't know what you're doing. DO NOT RUN WITHOUT SUPERVISION! I am not responsible for any damages. All files generated are empty. 
+some = int(input("Enter 5 to activate the generator. Enter 4 to test: "))
+if some == 4:
+    print("Confirm")
 Testnumber = 0
 while (some == 5):
     Testing = ("testing" + str(Testnumber))
     Testnumber += 1
     Open = open(Testing, "w")
+
+
