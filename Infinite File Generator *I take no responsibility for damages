@@ -1,0 +1,7 @@
+#This will take hours to wipe if you don't know what you're doing. DO NOT RUN WITHOUT SUPERVISION!
+some = 5
+Testnumber = 0
+while (some == 5):
+    Testing = ("testing" + str(Testnumber))
+    Testnumber += 1
+    Open = open(Testing, "w")
