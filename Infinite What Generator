@@ -1,0 +1,5 @@
+    some = 5
+while(some == 5):
+    some = 6
+    some = 5
+    print("What")
