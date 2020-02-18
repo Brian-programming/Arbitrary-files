@@ -1,0 +1,21 @@
+game = 0
+money = 0
+fish = 0
+inside = ""
+print("Get to $100 to win")
+while game == 0:
+    int(money)
+    int(fish)
+    inside = input("Get fish or sell money: ")
+    if inside == "get fish":
+        fish += 1
+    if inside == "get money":
+        if fish > 0:
+            fish += -1
+            money += 1
+    if money == 100:
+        print("Thanks for letting me waste your time")
+        game = 1
+    str(money)
+    str(fish)
+    print("fish = " + str(fish) + " " + "money = $" + str(money))
