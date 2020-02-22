@@ -1,0 +1,231 @@
+print("Welcome to RPG simulator: the game nobody asked for and nobody wanted")
+game = 1
+Ahoghealth = 20
+Abattle = ""
+Bhoghealth = 100
+Bbattle = ""
+SpiderHealth = 10000
+Cbattle = ""
+special = 1
+fight = 0
+HP = 10
+money = 3
+XP = 0
+fireball = 0
+while game == 1:
+    some = input("Where would you like to go? A land, B land, or Australia: ")
+    if some == "A land":
+        while some == "A land":
+            if HP <= 0:
+                game = 0
+                some = "Game over"
+            if Ahoghealth <= 0:
+                money += 5
+                XP += 20
+                special = 1
+                print("You earned $5 and 20 XP! You have " + str(XP) + "XP")
+                print("You encountered another hog! What do you do? \n A. Attack \n B. Special \n C. Item \n D. Run")
+                Ahoghealth = 20
+            print("You encountered a hog. What will you do? \n A. Attack \n B. Special \n C. Item \n D. Run")
+            Abattle = input("Enter here: ")
+            if Abattle == "A":
+                Ahoghealth += -1
+                HP += -1
+                if XP >= 50:
+                    Ahoghealth += -1
+                    if XP >= 100:
+                        Ahoghealth += -1
+                        if XP >= 150:
+                            Ahoghealth += -1
+                            if XP >= 200:
+                                Ahoghealth += -1
+                print("Enemy HP: " + str(Ahoghealth) + "Your HP: " + str(HP))
+            if Abattle == "B":
+                if special == 1:
+                    special = 0
+                    Ahoghealth += -3
+                    HP += -1
+                    if XP >= 50:
+                        Ahoghealth += -1
+                        if XP >= 100:
+                            Ahoghealth += -1
+                            if XP >= 150:
+                                Ahoghealth += -1
+                                if XP >= 200:
+                                    Ahoghealth += -1
+                    print("Enemy HP: " + str(Ahoghealth) + "Your HP: " + str(HP))
+            if Abattle == "C":
+                print("Get an item \n Health pack: $2.00 \n Corn: 2000" + "your money: " + str(money))
+                item = input("Enter your item here")
+                if item == "Health pack":
+                    if money >= 2:
+                        money += -2
+                        HP += 10
+                        print("You have $" + str(money) + " left")
+                    else:
+                        print("You don't have enough money. You lost a turn. ")
+                if item == "Corn":
+                    if money >= 2000:
+                        HP += 2000
+                        money += -2000
+                        print("You have $" + str(money) + " left")
+                    else:
+                        print("You don't have enough money. You lost a turn. ")
+            if Abattle == "D":
+                some = ""
+    while some == "B land":
+        if XP >= 500:
+            if HP <= 0:
+                game = 0
+                some = "Game Over"
+            if Bhoghealth <= 0:
+                money += 20
+                XP += 50
+                special = 1
+                print("You earned $20 and 50 XP! You have " + str(XP) + "XP")
+                print("You encountered another skeleton! What do you do? \n A. Attack \n B. Special \n C. Item \n D. Run")
+                Bhoghealth =100
+            print("You found a skeleton. What will you do? \n A. Attack \n B. Special \n C. Item \n D. Run")
+            Bbattle = input("Enter here: ")
+            if Bbattle == "A":
+                Bhoghealth += -2
+                HP += -3
+                if XP >= 50:
+                    Bhoghealth += -1
+                    if XP >= 100:
+                        Bhoghealth += -1
+                        if XP >= 150:
+                            Bhoghealth += -1
+                            if XP >= 200:
+                                Bhoghealth += -1
+                                if XP >= 300:
+                                    Bhoghealth += -1
+                                    if XP >= 400:
+                                        Bhoghealth += -1
+                                        if XP >= 600:
+                                            Bhoghealth += -1
+                                            if XP >= 1000:
+                                                Bhoghealth += -1
+                print("Enemy HP: " + str(Bhoghealth) + "Your HP: " + str(HP))
+            if Bbattle == "B":
+                if special == 1:
+                    special = 0
+                    Bhoghealth += -3
+                    HP += -3
+                    if XP >= 50:
+                        Bhoghealth += -1
+                        if XP >= 100:
+                            Bhoghealth += -1
+                            if XP >= 150:
+                                Bhoghealth += -1
+                                if XP >= 200:
+                                    Bhoghealth += -1
+                    print("Enemy HP: " + str(Bhoghealth) + "Your HP: " + str(HP))
+            if Bbattle == "C":
+                print("Get an item \n Health pack: $2.00 \n Potion: $100.00 \n Corn: 2000" + "your money: " + str(money))
+                item = input("Enter your item here")
+                if item == "Health pack":
+                    if money >= 2:
+                        money += -2
+                        HP += 10
+                        print("You have $" + str(money) + " left")
+                    else:
+                        print("You don't have enough money. You lost a turn. ")
+                if item == "Potion":
+                    if money >= 100:
+                        money += -100
+                        HP += 300
+                        print("You have $" + str(money) + " left")
+                    else:
+                        print("You don't have enough money. You lost a turn. ")
+                if item == "Corn":
+                    if money >= 2000:
+                        HP += 2000
+                        money += -2000
+                        print("You have $" + str(money) + " left")
+                    else:
+                        print("You don't have enough money. You lost a turn. ")
+            if Bbattle == "D":
+                some = ""
+        else:
+            print("You need 500 XP to reach this area. You have " + str(XP) + "XP. You have been sent back to the map.")
+            some = ""
+    while some == "Australia":
+        if XP >= 2000:
+            if HP <= 0:
+                game = 0
+                some = "Game Over"
+            if SpiderHealth <= 0:
+                money += 20
+                XP += 50
+                special = 1
+                print("You earned $20 and 50 XP! You have " + str(XP) + "XP")
+                print("Great job! You win!")
+            print("You found a spider! (Boss battle time) What will you do? \n A. Attack \n B. Special \n C. Item \n D. Run")
+            Cbattle = input("Enter here: ")
+            if Cbattle == "A":
+                SpiderHealth += -2
+                HP += -7
+                if XP >= 50:
+                    SpiderHealth += -1
+                    if XP >= 100:
+                        SpiderHealth += -1
+                        if XP >= 150:
+                            SpiderHealth += -1
+                            if XP >= 200:
+                                SpiderHealth += -1
+                                if XP >= 300:
+                                    SpiderHealth += -1
+                                    if XP >= 400:
+                                        SpiderHealth += -1
+                                        if XP >= 600:
+                                            SpiderHealth += -1
+                                            if XP >= 1000:
+                                                SpiderHealth += -1
+                                                if XP >= 2000:
+                                                    SpiderHealth += -3
+
+                print("Enemy HP: " + str(SpiderHealth) + "Your HP: " + str(HP))
+            if Cbattle == "B":
+                if special == 1:
+                    special = 0
+                    SpiderHealth += -3
+                    HP += -7
+                    if XP >= 50:
+                        SpiderHealth += -1
+                        if XP >= 100:
+                            SpiderHealth += -1
+                            if XP >= 150:
+                                SpiderHealth += -1
+                                if XP >= 200:
+                                    SpiderHealth += -1
+                    print("Enemy HP: " + str(SpiderHealth) + "Your HP: " + str(HP))
+            if Cbattle == "C":
+                print("Get an item \n Health pack: $2.00 \n Potion: $100.00 \n Corn: 2000" + "your money: " + str(money))
+                item = input("Enter your item here")
+                if item == "Health pack":
+                    if money >= 2:
+                        money += -2
+                        HP += 10
+                        print("You have $" + str(money) + " left")
+                    else:
+                        print("You don't have enough money. You lost a turn. ")
+                if item == "Potion":
+                    if money >= 100:
+                        money += -100
+                        HP += 50
+                        print("You have $" + str(money) + " left")
+                    else:
+                        print("You don't have enough money. You lost a turn. ")
+                if item == "Corn":
+                    if money >= 2000:
+                        HP += 2000
+                        money += -2000
+                        print("You have $" + str(money) + " left")
+                    else:
+                        print("You don't have enough money. You lost a turn. ")
+            if Cbattle == "D":
+                some = ""
+        else:
+            print("You need 2000 experience to enter this area You have " + str(XP) + "XP. You have been sent back to the map.")
+            some = ""
