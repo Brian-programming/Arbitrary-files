@@ -13,8 +13,15 @@ money = 3
 XP = 0
 fireball = 0
 sword = 0
+float = 0
+some = ""
+Knight = 0
+Dbattle = ""
 while game == 1:
-    some = input("Where would you like to go? A land, B land, or Australia: ")
+    if float == 0:
+        some = input("Where would you like to go? A land, B land, or Australia: ")
+    if float == 1:
+        some = input("Where would you like to go? A land, B land, Australia, or The Floating Castle: ")
     if some == "A land":
         while some == "A land":
             if HP <= 0:
@@ -217,7 +224,9 @@ while game == 1:
                 XP += 1000
                 special = 1
                 print("You earned $20 and 50 XP! You have " + str(XP) + "XP")
-                print("Great job! You win!")
+                print("Great job! You win! You unlocked the fireball!")
+                print("The Floating Castle has been added to your map")
+                float = 1
                 some = "Winner"
             print("You found a spider! (Boss battle time) What will you do? \n A. Attack \n B. Special \n C. Item \n D. Run")
             Cbattle = input("Enter here: ")
@@ -328,3 +337,124 @@ while game == 1:
         XP += 2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
         print("This isn't Minecraft. Just grind for like 5 minutes")
         some = ""
+    while some == "Teleport to the castle":
+        float = 1
+        fireball = 1
+        sword = 1
+        print("Did you just skip 50% of the game?")
+        some = ""
+    while some == "Floating Castle":
+        while some == "Floating Castle":
+            if XP >= 4000:
+                if HP <= 0:
+                    game = 0
+                    some = "Game Over"
+                if Knight <= 0:
+                    money += 9
+                    XP += 50
+                    special = 1
+                    print("You earned $9 and 50 XP! You have " + str(XP) + "XP")
+                    print("You encountered another Knight! What do you do? \n A. Attack \n B. Special \n C. Item \n D. Run \n E. Fireball(Region locked to magical areas)")
+                    Knight = 1000
+                print("You found a Knight. What will you do? \n A. Attack \n B. Special \n C. Item \n D. Run \n E. Fireball(Region locked to magical areas)")
+                Dbattle = input("Enter here: ")
+                if Dbattle == "A":
+                    Knight += -2
+                    HP += -5
+                    if XP >= 50:
+                        Knight += -1
+                        if XP >= 100:
+                            Knight += -1
+                            if XP >= 150:
+                                Knight += -1
+                                if XP >= 200:
+                                    Knight += -1
+                                    if XP >= 300:
+                                        Knight += -1
+                                        if XP >= 400:
+                                            Knight += -1
+                                            if XP >= 600:
+                                                Knight += -1
+                                                if XP >= 1000:
+                                                    Knight += -1
+                                                    if XP >= 2000:
+                                                        Knight += -3
+                                                        if XP >= 3000:
+                                                            Knight += -4
+                                                            if XP >= 4000:
+                                                                Knight += -4
+                                                                if sword == 1:
+                                                                    Knight += -10
+                    print("Enemy HP: " + str(Knight) + "Your HP: " + str(HP))
+                if Dbattle == "B":
+                    if special == 1:
+                        special = 0
+                        Knight += -3
+                        HP += -3
+                        if XP >= 50:
+                            Knight += -1
+                            if XP >= 100:
+                                Knight += -1
+                                if XP >= 150:
+                                    Knight += -1
+                                    if XP >= 200:
+                                        Knight += -1
+                                        if XP >= 300:
+                                            Knight += -2
+                                            if XP >= 400:
+                                                Knight += -2
+                                                if XP >= 600:
+                                                    Knight += -2
+                                                    if XP >= 1000:
+                                                        Knight += -2
+                                                        if XP >= 2000:
+                                                            Knight += -3
+                                                            if XP >= 3000:
+                                                                Knight += -5
+                                                                if XP >= 4000:
+                                                                    Knight += -5
+                                                                    if sword == 1:
+                                                                        Knight += -20
+                        print("Enemy HP: " + str(Knight) + "Your HP: " + str(HP))
+                if Dbattle == "C":
+                    print("Get an item \n Health pack: $2.00 \n Potion: $100.00 \n Corn: 2000" + "your money: " + str(
+                        money))
+                    item = input("Enter your item here")
+                    if item == "Health pack":
+                        if money >= 2:
+                            money += -2
+                            HP += 8
+                            print("You have $" + str(money) + " left")
+                        else:
+                            print("You don't have enough money. You lost a turn. ")
+                    if item == "Potion":
+                        if money >= 100:
+                            money += -100
+                            HP += 100
+                            print("You have $" + str(money) + " left")
+                        else:
+                            print("You don't have enough money. You lost a turn. ")
+                    if item == "Corn":
+                        if money >= 2000:
+                            HP += 2000
+                            money += -2000
+                            print("You have $" + str(money) + " left")
+                        else:
+                            print("You don't have enough money. You lost a turn. ")
+                if Dbattle == "D":
+                    some = ""
+                if Dbattle == "E":
+                    print("You summoned a fireball! This attack can do a specific amount of damage")
+                    if Knight/2 == int(Knight):
+                        Knight += -5
+                        print("Enemy HP: " + str(Knight) + "Your HP: " + str(HP))
+                    elif Knight/3 == int(Knight):
+                            Knight += -21
+                            print("Enemy HP: " + str(Knight) + "Your HP: " + str(HP))
+                    else:
+                        Knight += -16
+                        print("Enemy HP: " + str(Knight) + "Your HP: " + str(HP))
+            else:
+                print("You need 4000 XP to reach this area. You have " + str(
+                    XP) + "XP. You have been sent back to the map.")
+                some = ""
