@@ -12,6 +12,7 @@ HP = 10
 money = 3
 XP = 0
 fireball = 0
+sword = 0
 while game == 1:
     some = input("Where would you like to go? A land, B land, or Australia: ")
     if some == "A land":
@@ -20,10 +21,10 @@ while game == 1:
                 game = 0
                 some = "Game over"
             if Ahoghealth <= 0:
-                money += 5
+                money += 4
                 XP += 20
                 special = 1
-                print("You earned $5 and 20 XP! You have " + str(XP) + "XP")
+                print("You earned $4 and 20 XP! You have " + str(XP) + "XP")
                 print("You encountered another hog! What do you do? \n A. Attack \n B. Special \n C. Item \n D. Run")
                 Ahoghealth = 20
             print("You encountered a hog. What will you do? \n A. Attack \n B. Special \n C. Item \n D. Run")
@@ -39,6 +40,22 @@ while game == 1:
                             Ahoghealth += -1
                             if XP >= 200:
                                 Ahoghealth += -1
+                                if XP >= 300:
+                                    Ahoghealth += -1
+                                    if XP >= 400:
+                                        Ahoghealth += -1
+                                        if XP >= 600:
+                                            Ahoghealth += -1
+                                            if XP >= 1000:
+                                                Ahoghealth += -2
+                                                if XP >= 2000:
+                                                    Ahoghealth += -3
+                                                    if XP >= 3000:
+                                                        Ahoghealth += -5
+                                                        if XP >= 4000:
+                                                            Ahoghealth += -5
+                                                            if sword == 1:
+                                                                Ahoghealth += -10
                 print("Enemy HP: " + str(Ahoghealth) + "Your HP: " + str(HP))
             if Abattle == "B":
                 if special == 1:
@@ -53,6 +70,22 @@ while game == 1:
                                 Ahoghealth += -1
                                 if XP >= 200:
                                     Ahoghealth += -1
+                                    if XP >= 300:
+                                        Ahoghealth += -2
+                                        if XP >= 400:
+                                            Ahoghealth += -2
+                                            if XP >= 600:
+                                                Ahoghealth += -2
+                                                if XP >= 1000:
+                                                    Ahoghealth += -2
+                                                    if XP >= 2000:
+                                                        Ahoghealth += -3
+                                                        if XP >= 3000:
+                                                            Ahoghealth += -5
+                                                            if XP >= 4000:
+                                                                Ahoghealth += -5
+                                                                if sword == 1:
+                                                                    Ahoghealth += -20
                     print("Enemy HP: " + str(Ahoghealth) + "Your HP: " + str(HP))
             if Abattle == "C":
                 print("Get an item \n Health pack: $2.00 \n Corn: 2000" + "your money: " + str(money))
@@ -79,17 +112,17 @@ while game == 1:
                 game = 0
                 some = "Game Over"
             if Bhoghealth <= 0:
-                money += 20
+                money += 9
                 XP += 50
                 special = 1
-                print("You earned $20 and 50 XP! You have " + str(XP) + "XP")
+                print("You earned $9 and 50 XP! You have " + str(XP) + "XP")
                 print("You encountered another skeleton! What do you do? \n A. Attack \n B. Special \n C. Item \n D. Run")
                 Bhoghealth =100
             print("You found a skeleton. What will you do? \n A. Attack \n B. Special \n C. Item \n D. Run")
             Bbattle = input("Enter here: ")
             if Bbattle == "A":
                 Bhoghealth += -2
-                HP += -3
+                HP += -5
                 if XP >= 50:
                     Bhoghealth += -1
                     if XP >= 100:
@@ -106,6 +139,14 @@ while game == 1:
                                             Bhoghealth += -1
                                             if XP >= 1000:
                                                 Bhoghealth += -1
+                                                if XP >= 2000:
+                                                    Bhoghealth += -3
+                                                    if XP >= 3000:
+                                                        Bhoghealth += -4
+                                                        if XP >= 4000:
+                                                            Bhoghealth += -4
+                                                            if sword == 1:
+                                                                Bhoghealth += -10
                 print("Enemy HP: " + str(Bhoghealth) + "Your HP: " + str(HP))
             if Bbattle == "B":
                 if special == 1:
@@ -120,6 +161,22 @@ while game == 1:
                                 Bhoghealth += -1
                                 if XP >= 200:
                                     Bhoghealth += -1
+                                    if XP >= 300:
+                                        Bhoghealth += -2
+                                        if XP >= 400:
+                                            Bhoghealth += -2
+                                            if XP >= 600:
+                                                Bhoghealth += -2
+                                                if XP >= 1000:
+                                                    Bhoghealth += -2
+                                                    if XP >= 2000:
+                                                        Bhoghealth += -3
+                                                        if XP >= 3000:
+                                                            Bhoghealth += -5
+                                                            if XP >= 4000:
+                                                                Bhoghealth += -5
+                                                                if sword == 1:
+                                                                    Bhoghealth += -20
                     print("Enemy HP: " + str(Bhoghealth) + "Your HP: " + str(HP))
             if Bbattle == "C":
                 print("Get an item \n Health pack: $2.00 \n Potion: $100.00 \n Corn: 2000" + "your money: " + str(money))
@@ -127,14 +184,14 @@ while game == 1:
                 if item == "Health pack":
                     if money >= 2:
                         money += -2
-                        HP += 10
+                        HP += 8
                         print("You have $" + str(money) + " left")
                     else:
                         print("You don't have enough money. You lost a turn. ")
                 if item == "Potion":
                     if money >= 100:
                         money += -100
-                        HP += 300
+                        HP += 100
                         print("You have $" + str(money) + " left")
                     else:
                         print("You don't have enough money. You lost a turn. ")
@@ -156,16 +213,17 @@ while game == 1:
                 game = 0
                 some = "Game Over"
             if SpiderHealth <= 0:
-                money += 20
-                XP += 50
+                money += 1000
+                XP += 1000
                 special = 1
                 print("You earned $20 and 50 XP! You have " + str(XP) + "XP")
                 print("Great job! You win!")
+                some = "Winner"
             print("You found a spider! (Boss battle time) What will you do? \n A. Attack \n B. Special \n C. Item \n D. Run")
             Cbattle = input("Enter here: ")
             if Cbattle == "A":
                 SpiderHealth += -2
-                HP += -7
+                HP += -50
                 if XP >= 50:
                     SpiderHealth += -1
                     if XP >= 100:
@@ -184,13 +242,18 @@ while game == 1:
                                                 SpiderHealth += -1
                                                 if XP >= 2000:
                                                     SpiderHealth += -3
-
+                                                    if XP >= 3000:
+                                                        SpiderHealth += -5
+                                                        if XP >= 4000:
+                                                            SpiderHealth += -5
+                                                            if sword == 1:
+                                                                SpiderHealth += -10
                 print("Enemy HP: " + str(SpiderHealth) + "Your HP: " + str(HP))
             if Cbattle == "B":
                 if special == 1:
                     special = 0
                     SpiderHealth += -3
-                    HP += -7
+                    HP += -50
                     if XP >= 50:
                         SpiderHealth += -1
                         if XP >= 100:
@@ -199,21 +262,45 @@ while game == 1:
                                 SpiderHealth += -1
                                 if XP >= 200:
                                     SpiderHealth += -1
+                                    if XP >= 300:
+                                        SpiderHealth += -2
+                                        if XP >= 400:
+                                            SpiderHealth += -2
+                                            if XP >= 600:
+                                                SpiderHealth += -2
+                                                if XP >= 1000:
+                                                    SpiderHealth += -2
+                                                    if XP >= 2000:
+                                                        SpiderHealth += -3
+                                                        if XP >= 3000:
+                                                            SpiderHealth += -5
+                                                            if XP >= 4000:
+                                                                SpiderHealth += -5
+                                                                if sword == 1:
+                                                                    SpiderHealth += -20
                     print("Enemy HP: " + str(SpiderHealth) + "Your HP: " + str(HP))
             if Cbattle == "C":
-                print("Get an item \n Health pack: $2.00 \n Potion: $100.00 \n Corn: 2000" + "your money: " + str(money))
+                print("Get an item \n Health pack: $2.00 \n Potion: $100.00 \n Corn: 2000 \n Sword: 500" + "your money: " + str(money))
                 item = input("Enter your item here")
                 if item == "Health pack":
                     if money >= 2:
                         money += -2
-                        HP += 10
+                        HP += 20
                         print("You have $" + str(money) + " left")
+                    else:
+                        print("You don't have enough money. You lost a turn. ")
+                if item == "Sword":
+                    if money >= 500:
+                        money += -500
+                        sword = 1
+                        print("You have $" + str(money) + " left")
+                        print("Oh, right, you need to have 4000 XP. I should've mentioned that earlier. ")
                     else:
                         print("You don't have enough money. You lost a turn. ")
                 if item == "Potion":
                     if money >= 100:
                         money += -100
-                        HP += 50
+                        HP += 100
                         print("You have $" + str(money) + " left")
                     else:
                         print("You don't have enough money. You lost a turn. ")
@@ -229,3 +316,15 @@ while game == 1:
         else:
             print("You need 2000 experience to enter this area You have " + str(XP) + "XP. You have been sent back to the map.")
             some = ""
+    while some == "Beserk":
+        HP += 200000
+        print("You shouldn't know about this")
+        some = ""
+    while some == "Money!!!":
+        money += 999999999999999999999999999999999999999999999
+        print("How did you find this?")
+        some = ""
+    while some == "I want experience":
+        XP += 2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+        print("This isn't Minecraft. Just grind for like 5 minutes")
+        some = ""
